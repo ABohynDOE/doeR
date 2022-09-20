@@ -14,8 +14,8 @@ An object of the class \code{"data.frame"}
 \item{design.rank}{Rank, in term of aberration, of the design among all
 designs with similar run size and `n`}
 \item{cols}{String representing the columns used to create the design}
-\item{wlp}{String representing the word length pattern of the design, starting
-with words of length 3 or length 4 for run sizes of 64}
+\item{wlp}{String representing the word length pattern of the design,
+starting with words of length 3 or length 4 for run sizes of 64}
 \item{clear.2fi}{Number of clear two-factor interactions (2FI) of the design}
 }
 }
