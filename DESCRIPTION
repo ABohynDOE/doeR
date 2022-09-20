@@ -15,6 +15,7 @@ BugReports: https://github.com/ABohynDOE/doeR/issues
 Depends: 
     R (>= 2.10)
 Suggests: 
+    covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8

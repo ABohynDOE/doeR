@@ -28,6 +28,7 @@ of Hongquan Xu.
 \examples{
 data(xu)
 runsizes <- unique(xu$n.runs)
+print(runsizes)
 }
 \references{
 Hongquan Xu (2009),Technometrics, 51:3, 262-277,

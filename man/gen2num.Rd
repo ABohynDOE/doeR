@@ -19,5 +19,5 @@ number.
 }
 \examples{
 gen2num('abc')
-col_numbers <- gen2num(g = c('acd','e','cdf'))
+gen2num(g = c('acd','e','cdf'))
 }

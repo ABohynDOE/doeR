@@ -26,4 +26,5 @@
 #' @examples
 #' data(xu)
 #' runsizes <- unique(xu$n.runs)
+#' print(runsizes)
 "xu"

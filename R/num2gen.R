@@ -7,7 +7,7 @@
 #' `n`
 #' @examples
 #' num2gen(7)
-#' generators <- num2gen(n = c(13,31,28))
+#' num2gen(n = c(13,31,28))
 #' @export
 num2gen <- function(n){
   out <- c()
