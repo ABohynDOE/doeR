@@ -7,13 +7,13 @@
 design(run_size, index)
 }
 \arguments{
+\item{run_size}{An integer specifying the run size of the design. It must be
+a power of 2.}
+
 \item{index}{A string representing the index of the design, from the paper.
 All strings are of the from "n-p.i" where `n` is the number of factors in the
 design, `p` is the number of added factors in the design, and `i` is the rank
 of the design in the table.}
-
-\item{runsize}{An integer specifying the run size of the design. It must be
-a power of 2.}
 }
 \value{
 A numeric matrix corresponding to the design matrix.
@@ -25,7 +25,4 @@ index of the design as identifiers.
 
     The index of a design can be found in the design tables of the
 corresponding paper.
-}
-\examples{
-design(32,"8-3.1")
 }

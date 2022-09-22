@@ -13,7 +13,7 @@ design_model_matrix(k, cols)
 \item{cols}{Columns used in the design.}
 }
 \value{
-m Design matrix.
+A numeric matrix corresponding to the model matrix of the design.
 }
 \description{
 Generate the model matrix for the design with `k` factors and the columns

@@ -6,9 +6,7 @@
 #' @description Generate the matrix containing `k` basic factors.
 #'
 #' @param k Number of basic factors.
-#' @return m A \eqn{2^{k} \times k} matrix containing the basic factors.
-#' @examples
-#' basic_factor_matrix(4)
+#' @return A \eqn{2^{k} \times k} matrix containing the basic factors.
 basic_factor_matrix <- function(k) {
     .Call(`_doeR_basic_factor_matrix`, k)
 }
@@ -18,7 +16,7 @@ basic_factor_matrix <- function(k) {
 #'
 #' @param k Number of basic factors.
 #' @param cols Columns used in the design.
-#' @return m Design matrix.
+#' @return A numeric matrix corresponding to the model matrix of the design.
 design_model_matrix <- function(k, cols) {
     .Call(`_doeR_design_model_matrix`, k, cols)
 }

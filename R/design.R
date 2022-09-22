@@ -1,3 +1,4 @@
+utils::globalVariables(c("csw", "xu"))
 #' @title design
 #'
 #' @description `design` generates the design matrix of a design from the
@@ -7,15 +8,13 @@
 #'     The index of a design can be found in the design tables of the
 #'corresponding paper.
 #'
-#' @param runsize An integer specifying the run size of the design. It must be
+#' @param run_size An integer specifying the run size of the design. It must be
 #' a power of 2.
 #' @param index A string representing the index of the design, from the paper.
 #' All strings are of the from "n-p.i" where `n` is the number of factors in the
 #' design, `p` is the number of added factors in the design, and `i` is the rank
 #' of the design in the table.
 #' @return A numeric matrix corresponding to the design matrix.
-#' @examples
-#' design(32,"8-3.1")
 #' @export
 design <- function(run_size, index) {
   # Check run size (16 to 4096)

@@ -10,11 +10,8 @@ basic_factor_matrix(k)
 \item{k}{Number of basic factors.}
 }
 \value{
-m A \eqn{2^{k} \times k} matrix containing the basic factors.
+A \eqn{2^{k} \times k} matrix containing the basic factors.
 }
 \description{
 Generate the matrix containing `k` basic factors.
-}
-\examples{
-basic_factor_matrix(4)
 }
