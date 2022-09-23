@@ -19,3 +19,8 @@ A numeric matrix corresponding to the model matrix of the design.
 Generate the model matrix for the design with `k` factors and the columns
 specified in the vector ´cols´.
 }
+\examples{
+\dontrun{
+design_model_matrix(4, c(1,2,3,8))
+}
+}

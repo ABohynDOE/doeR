@@ -15,3 +15,8 @@ A \eqn{2^{k} \times k} matrix containing the basic factors.
 \description{
 Generate the matrix containing `k` basic factors.
 }
+\examples{
+\dontrun{
+basic_factor_matrix(4)
+}
+}

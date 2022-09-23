@@ -7,6 +7,10 @@
 #'
 #' @param k Number of basic factors.
 #' @return A \eqn{2^{k} \times k} matrix containing the basic factors.
+#' @examples
+#' \dontrun{
+#' basic_factor_matrix(4)
+#' }
 basic_factor_matrix <- function(k) {
     .Call(`_doeR_basic_factor_matrix`, k)
 }
@@ -17,7 +21,44 @@ basic_factor_matrix <- function(k) {
 #' @param k Number of basic factors.
 #' @param cols Columns used in the design.
 #' @return A numeric matrix corresponding to the model matrix of the design.
+#' @importFrom Rcpp evalCpp
+#' @examples
+#' \dontrun{
+#' design_model_matrix(4, c(1,2,3,8))
+#' }
 design_model_matrix <- function(k, cols) {
     .Call(`_doeR_design_model_matrix`, k, cols)
+}
+
+#' @title Hamming distance between two vectors
+#'
+#' @description Computes the hamming distance between two vectors \code{a} and
+#' \code{b}. The hamming distance is the number of places where they differ.
+#' Therefore, for two vectors of size n, the distance is an integer between 0
+#' and n.
+#'
+#' @param a first vector
+#' @param b second vector
+#' @return An integer
+hamming_distance <- function(a, b) {
+    .Call(`_doeR_hamming_distance`, a, b)
+}
+
+#' Distance distribution of a matrix
+#'
+#' @description Computes the distribution of the hamming distances between
+#' all pairs of rows (even identical) in a matrix. For a matrix with N rows,
+#' there are \eqn{\binom{N}{2}+N} such combinations.
+#'
+#' @details
+#' For a matrix \eqn{\mathbf{X}} of size \eqn{(n \times m)}, the distance
+#' distribution is a row-vector \eqn{B} of length `n`, where \eqn{B_i} is
+#' the number of pairs of rows with hamming distance \eqn{i} divided by `n`.
+#' Since pairs of identical rows are considered, \eqn{B_0} will always be `n`.
+#'
+#' @param x input matrix
+#' @return A vector of the distance distribution
+distance_distribution <- function(x) {
+    .Call(`_doeR_distance_distribution`, x)
 }
 

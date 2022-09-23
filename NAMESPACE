@@ -3,4 +3,5 @@
 export(design)
 export(gen2num)
 export(num2gen)
+importFrom(Rcpp,evalCpp)
 useDynLib(doeR, .registration = TRUE)

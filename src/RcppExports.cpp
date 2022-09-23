@@ -33,10 +33,35 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// hamming_distance
+int hamming_distance(NumericVector a, NumericVector b);
+RcppExport SEXP _doeR_hamming_distance(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type a(aSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(hamming_distance(a, b));
+    return rcpp_result_gen;
+END_RCPP
+}
+// distance_distribution
+NumericVector distance_distribution(NumericMatrix x);
+RcppExport SEXP _doeR_distance_distribution(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(distance_distribution(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_doeR_basic_factor_matrix", (DL_FUNC) &_doeR_basic_factor_matrix, 1},
     {"_doeR_design_model_matrix", (DL_FUNC) &_doeR_design_model_matrix, 2},
+    {"_doeR_hamming_distance", (DL_FUNC) &_doeR_hamming_distance, 2},
+    {"_doeR_distance_distribution", (DL_FUNC) &_doeR_distance_distribution, 1},
     {NULL, NULL, 0}
 };
 

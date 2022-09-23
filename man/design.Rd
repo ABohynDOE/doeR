@@ -26,3 +26,6 @@ index of the design as identifiers.
     The index of a design can be found in the design tables of the
 corresponding paper.
 }
+\examples{
+design(32, '8-3.1')
+}

@@ -15,6 +15,8 @@ utils::globalVariables(c("csw", "xu"))
 #' design, `p` is the number of added factors in the design, and `i` is the rank
 #' of the design in the table.
 #' @return A numeric matrix corresponding to the design matrix.
+#' @examples
+#' design(32, '8-3.1')
 #' @export
 design <- function(run_size, index) {
   # Check run size (16 to 4096)

@@ -7,6 +7,10 @@ using namespace Rcpp;
 //'
 //' @param k Number of basic factors.
 //' @return A \eqn{2^{k} \times k} matrix containing the basic factors.
+//' @examples
+//' \dontrun{
+//' basic_factor_matrix(4)
+//' }
 // [[Rcpp::export]]
 IntegerMatrix basic_factor_matrix(int k){
   int N = pow(2,k);
@@ -30,6 +34,11 @@ IntegerMatrix basic_factor_matrix(int k){
 //' @param k Number of basic factors.
 //' @param cols Columns used in the design.
 //' @return A numeric matrix corresponding to the model matrix of the design.
+//' @importFrom Rcpp evalCpp
+//' @examples
+//' \dontrun{
+//' design_model_matrix(4, c(1,2,3,8))
+//' }
 // [[Rcpp::export]]
 IntegerMatrix design_model_matrix(int k, IntegerVector cols)
 {
