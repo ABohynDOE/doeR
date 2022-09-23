@@ -77,9 +77,9 @@ design <- function(run_size, index) {
 #' @return A numeric matrix representing the design matrix.
 #' @examples
 #' custom_design(32, c(7,15,31))
-#' custom_design(16, c(1,2,8,11), add_bf = F)
+#' custom_design(16, c(1,2,8,11), add_bf = FALSE)
 #' @export
-custom_design <- function(run_size, added_cols, add_bf = T) {
+custom_design <- function(run_size, added_cols, add_bf = TRUE) {
   # Check run size is a power of 2
   if (2**round(log2(run_size)) != 2**log2(run_size)) {
     stop(

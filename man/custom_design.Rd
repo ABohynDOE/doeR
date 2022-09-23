@@ -4,7 +4,7 @@
 \alias{custom_design}
 \title{Generate a custom design}
 \usage{
-custom_design(run_size, added_cols, add_bf = T)
+custom_design(run_size, added_cols, add_bf = TRUE)
 }
 \arguments{
 \item{run_size}{Integer representing the number of runs in the design.}
@@ -25,5 +25,5 @@ corresponding design matrix.
 }
 \examples{
 custom_design(32, c(7,15,31))
-custom_design(16, c(1,2,8,11), add_bf = F)
+custom_design(16, c(1,2,8,11), add_bf = FALSE)
 }
