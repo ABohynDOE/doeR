@@ -27,5 +27,5 @@ index of the design as identifiers.
 corresponding paper.
 }
 \examples{
-design(32, '8-3.1')
+design(32, "8-3.1")
 }

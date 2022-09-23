@@ -18,5 +18,5 @@ A string or character vector holding the generator corresponding to
 }
 \examples{
 num2gen(7)
-num2gen(n = c(13,31,28))
+num2gen(n = c(13, 31, 28))
 }

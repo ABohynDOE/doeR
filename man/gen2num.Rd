@@ -18,6 +18,6 @@ generators in `g`
 number.
 }
 \examples{
-gen2num('abc')
-gen2num(g = c('acd','e','cdf'))
+gen2num("abc")
+gen2num(g = c("acd", "e", "cdf"))
 }
