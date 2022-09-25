@@ -12,18 +12,20 @@ using namespace Rcpp;
 //' @param b second vector
 //' @return An integer
 // [[Rcpp::export]]
-int hamming_distance(NumericVector a, NumericVector b){
+int hamming_distance(NumericVector a, NumericVector b)
+{
   // Check that a and b have same size
-  if (a.size() != b.size()){
+  if (a.size() != b.size())
+  {
     stop("Both vectors must have the same size");
   }
-  int dist =0;
-  for (int i = 0; i < a.size(); i++){
+  int dist = 0;
+  for (int i = 0; i < a.size(); i++)
+  {
     dist += (a[i] != b[i]);
   }
   return dist;
 }
-
 
 //' @title Distance distribution of a matrix
 //'
@@ -40,20 +42,24 @@ int hamming_distance(NumericVector a, NumericVector b){
 //' @param x input matrix
 //' @return A vector of the distance distribution
 // [[Rcpp::export]]
-NumericVector distance_distribution(NumericMatrix x) {
+NumericVector distance_distribution(NumericMatrix x)
+{
   int nrow = x.nrow();
   int ncol = x.ncol();
-  NumericVector distVec(ncol+1);
-  for (int i = 0; i < nrow; i++){
-    for (int j = 0; j < i; j++){
-      int h = hamming_distance(x(i,_),x(j,_));
+  NumericVector distVec(ncol + 1);
+  for (int i = 0; i < nrow; i++)
+  {
+    for (int j = 0; j < i; j++)
+    {
+      int h = hamming_distance(x(i, _), x(j, _));
       distVec[h] += 2;
     }
   }
   // Along diagonal
   distVec[0] += nrow;
   // Normalize
-  for (int i = 0; i <= ncol; i++) {
+  for (int i = 0; i <= ncol; i++)
+  {
     distVec[i] /= nrow;
   }
   return distVec;
@@ -67,10 +73,13 @@ NumericVector distance_distribution(NumericMatrix x) {
 // [[Rcpp::export]]
 double factorial(double x)
 {
+  if (x < 0)
+  {
+    stop("Undefined behavior for negative numbers.");
+  }
   double sol = R::gammafn(x + 1.0);
   return sol;
 }
-
 
 //' @title Binomial coefficient
 //'
@@ -128,15 +137,18 @@ int krawtchouk(int j, int x, int n)
 //' @param N An integer representing the run size of the design.
 //' @return A numeric vector of the same size as B.
 //[[Rcpp::export]]
-NumericVector mac_williams_transform(NumericVector B, int N){
-  int n = B.length()-1;
-  NumericVector B_prime(n+1);
-  for(int j=0; j<=n; j++){
+NumericVector mac_williams_transform(NumericVector B, int N)
+{
+  int n = B.length() - 1;
+  NumericVector B_prime(n + 1);
+  for (int j = 0; j <= n; j++)
+  {
     int val = 0;
-    for(int i=0; i<=n; i++){
-      val += B[i]*krawtchouk(j,i,n);
+    for (int i = 0; i <= n; i++)
+    {
+      val += B[i] * krawtchouk(j, i, n);
     }
-    B_prime[j] = val/N;
+    B_prime[j] = val / N;
   }
   return B_prime;
 }
@@ -150,7 +162,8 @@ NumericVector mac_williams_transform(NumericVector B, int N){
 //' @return A numeric vector with size equal to the number of columns of the
 //' original design D, containing the word length pattern.
 //[[Rcpp::export]]
-NumericVector wlp(NumericMatrix D){
+NumericVector wlp(NumericMatrix D)
+{
   int N = D.nrow();
   NumericVector d = distance_distribution(D);
   return mac_williams_transform(d, N);
