@@ -24,6 +24,6 @@ Given a run size and a set of column numbers, generate the
 corresponding design matrix.
 }
 \examples{
-custom_design(32, c(7,15,31))
-custom_design(16, c(1,2,8,11), add_bf = FALSE)
+custom_design(32, c(7, 15, 31))
+custom_design(16, c(1, 2, 8, 11), add_bf = FALSE)
 }

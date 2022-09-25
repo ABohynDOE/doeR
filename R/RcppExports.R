@@ -44,7 +44,7 @@ hamming_distance <- function(a, b) {
     .Call(`_doeR_hamming_distance`, a, b)
 }
 
-#' Distance distribution of a matrix
+#' @title Distance distribution of a matrix
 #'
 #' @description Computes the distribution of the hamming distances between
 #' all pairs of rows (even identical) in a matrix. For a matrix with N rows,
@@ -60,5 +60,62 @@ hamming_distance <- function(a, b) {
 #' @return A vector of the distance distribution
 distance_distribution <- function(x) {
     .Call(`_doeR_distance_distribution`, x)
+}
+
+#' @title Factorial of a number
+#'
+#' @description Compute the factorial of a number.
+#' @param x A positive integer
+#' @return A double
+factorial <- function(x) {
+    .Call(`_doeR_factorial`, x)
+}
+
+#' @title Binomial coefficient
+#'
+#' @description Compute the number of ways of choosing `k` elements out of a
+#' set of size `n`. Chosen behavior for negative `k` is to return 0. Chosen
+#' behavior for `k` equals to zero is to return 1.
+#' @param n An integer, the size of the set of all elements.
+#' @param k An integer, the number of elements to choose.
+#' @return An integer
+nchoosek <- function(n, k) {
+    .Call(`_doeR_nchoosek`, n, k)
+}
+
+#' @title Krawtchouk polynomials
+#'
+#' @description Compute the Krawtchouk polynomial P_j(x,n,s) for s=2, since it
+#' is for two-level designs.
+#' @param j An integer
+#' @param x An integer
+#' @param n An integer
+#' @return An integer giving the value of the polynomial evaluated at j, x and
+#' n.
+krawtchouk <- function(j, x, n) {
+    .Call(`_doeR_krawtchouk`, j, x, n)
+}
+
+#' @title MacWilliams Transform
+#'
+#' @description Compute the MacWiliams transform of the distance distribution
+#' of a design.
+#' @param B A numeric vector containing the distance distribution of a design.
+#' @param N An integer representing the run size of the design.
+#' @return A numeric vector of the same size as B.
+mac_williams_transform <- function(B, N) {
+    .Call(`_doeR_mac_williams_transform`, B, N)
+}
+
+#' @title Word length pattern
+#'
+#' @description Compute the Word Length Pattern (WLP) of a design. For this
+#' vector B, B_i represents the number of words of length i.
+#'
+#' @param D A numeric matrix corresponding to the design matrix.
+#' @return A numeric vector with size equal to the number of columns of the
+#' original design D, containing the word length pattern.
+wlp <- function(D) {
+    .Call(`_doeR_wlp`, D)
 }
 

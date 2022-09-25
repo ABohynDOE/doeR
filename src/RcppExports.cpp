@@ -56,12 +56,76 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// factorial
+double factorial(double x);
+RcppExport SEXP _doeR_factorial(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(factorial(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// nchoosek
+int nchoosek(int n, int k);
+RcppExport SEXP _doeR_nchoosek(SEXP nSEXP, SEXP kSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    rcpp_result_gen = Rcpp::wrap(nchoosek(n, k));
+    return rcpp_result_gen;
+END_RCPP
+}
+// krawtchouk
+int krawtchouk(int j, int x, int n);
+RcppExport SEXP _doeR_krawtchouk(SEXP jSEXP, SEXP xSEXP, SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type j(jSEXP);
+    Rcpp::traits::input_parameter< int >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(krawtchouk(j, x, n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mac_williams_transform
+NumericVector mac_williams_transform(NumericVector B, int N);
+RcppExport SEXP _doeR_mac_williams_transform(SEXP BSEXP, SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type B(BSEXP);
+    Rcpp::traits::input_parameter< int >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(mac_williams_transform(B, N));
+    return rcpp_result_gen;
+END_RCPP
+}
+// wlp
+NumericVector wlp(NumericMatrix D);
+RcppExport SEXP _doeR_wlp(SEXP DSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type D(DSEXP);
+    rcpp_result_gen = Rcpp::wrap(wlp(D));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_doeR_basic_factor_matrix", (DL_FUNC) &_doeR_basic_factor_matrix, 1},
     {"_doeR_design_model_matrix", (DL_FUNC) &_doeR_design_model_matrix, 2},
     {"_doeR_hamming_distance", (DL_FUNC) &_doeR_hamming_distance, 2},
     {"_doeR_distance_distribution", (DL_FUNC) &_doeR_distance_distribution, 1},
+    {"_doeR_factorial", (DL_FUNC) &_doeR_factorial, 1},
+    {"_doeR_nchoosek", (DL_FUNC) &_doeR_nchoosek, 2},
+    {"_doeR_krawtchouk", (DL_FUNC) &_doeR_krawtchouk, 3},
+    {"_doeR_mac_williams_transform", (DL_FUNC) &_doeR_mac_williams_transform, 2},
+    {"_doeR_wlp", (DL_FUNC) &_doeR_wlp, 1},
     {NULL, NULL, 0}
 };
 

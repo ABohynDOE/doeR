@@ -18,3 +18,10 @@ test_that("Designs with no column numbers in Xu are not generated", {
     "Sorry, no columns given for that design. Impossible to generate !"
   )
 })
+
+test_that("Design model matrix cannot be created with negative k", {
+  expect_error(
+    design_model_matrix(-1, c(1, 2, 3)),
+    "'k' must be a positive value."
+  )
+})

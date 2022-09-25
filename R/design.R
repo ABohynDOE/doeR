@@ -76,8 +76,8 @@ design <- function(run_size, index) {
 #'
 #' @return A numeric matrix representing the design matrix.
 #' @examples
-#' custom_design(32, c(7,15,31))
-#' custom_design(16, c(1,2,8,11), add_bf = FALSE)
+#' custom_design(32, c(7, 15, 31))
+#' custom_design(16, c(1, 2, 8, 11), add_bf = FALSE)
 #' @export
 custom_design <- function(run_size, added_cols, add_bf = TRUE) {
   # Check run size is a power of 2
@@ -87,7 +87,7 @@ custom_design <- function(run_size, added_cols, add_bf = TRUE) {
     )
   }
   if (any(added_cols >= run_size)) {
-    stop('Column numbers cannot be larger than the runsize')
+    stop("Column numbers cannot be larger than the runsize")
   }
   # Generate the columns of the basic factors
   k <- as.integer(log2(run_size))
@@ -107,7 +107,7 @@ custom_design <- function(run_size, added_cols, add_bf = TRUE) {
       )
     }
     full_cols <- new_cols
-  } else{
+  } else {
     full_cols <- added_cols
   }
   mat <- design_model_matrix(k, full_cols)
