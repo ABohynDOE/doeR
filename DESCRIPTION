@@ -1,7 +1,7 @@
 Type: Package
 Package: doeR
 Title: Generator and characterize designs of experiments in R (doeR)
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person("Alexandre", "Bohyn", , "alexandre.bohyn@kuleuven.be", role = c("cre", "aut"))
 Description: Provides several functions to characterize regular designs in
