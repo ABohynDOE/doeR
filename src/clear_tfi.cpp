@@ -26,5 +26,6 @@ double clear_2fi(arma::mat X){
   arma::mat XT = arma::join_rows(Xcoded, T);
   arma::mat A = abs(XT.t() * T)/N;
   arma::rowvec col_sum = sum(A, 0) -1 ;
-  return (dim - sum(col_sum));
+  arma::uvec clear_2fi_idx = arma::find(col_sum == 0);
+  return clear_2fi_idx.size();
 }

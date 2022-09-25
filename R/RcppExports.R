@@ -8,7 +8,7 @@
 #' called clear.
 #'
 #' @param X A numeric matrix representing the design matrix.
-#' @return An integer represeting the number of clear 2FI in the design.
+#' @return An integer representing the number of clear 2FI in the design.
 clear_2fi <- function(X) {
     .Call(`_doeR_clear_2fi`, X)
 }
