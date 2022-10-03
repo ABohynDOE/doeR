@@ -10,7 +10,7 @@ clear_2fi(X)
 \item{X}{A numeric matrix representing the design matrix.}
 }
 \value{
-An integer represeting the number of clear 2FI in the design.
+An integer representing the number of clear 2FI in the design.
 }
 \description{
 Compute the number of clear two-factor interactions (2FI) of a
